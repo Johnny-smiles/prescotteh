@@ -33,17 +33,20 @@ export default defineNuxtConfig({
                 /* Open Graph */
                 { property: 'og:title',       content: 'Prescott Electric & Heating — Electrical & HVAC in Prescott, WI' },
                 { property: 'og:description', content: 'Reliable electricians and HVAC technicians serving Prescott, River Falls, Hudson, and nearby communities since 1963.' },
-                { property: 'og:image',       content: 'https://prescotteh.com/og-image.jpg' },
+                { property: 'og:image',       content: '/og-image.jpg' },
                 { property: 'og:image:width', content: '1200' },
                 { property: 'og:image:height', content: '630' },
+                { property: 'og:image:alt',   content: 'Prescott Electric & Heating - Professional electrical and HVAC services' },
                 { property: 'og:url',         content: 'https://prescotteh.com' },
                 { property: 'og:type',        content: 'website' },
+                { property: 'og:site_name',   content: 'Prescott Electric & Heating' },
 
                 /* Twitter */
                 { name: 'twitter:card',        content: 'summary_large_image' },
                 { name: 'twitter:title',       content: 'Prescott Electric & Heating — Electrical & HVAC in Prescott, WI' },
                 { name: 'twitter:description', content: 'Full-service electrical and heating/cooling support throughout Prescott and the St. Croix Valley.' },
-                { name: 'twitter:image',       content: 'https://prescotteh.com/og-image.jpg' }
+                { name: 'twitter:image',       content: '/og-image.jpg' },
+                { name: 'twitter:image:alt',   content: 'Prescott Electric & Heating - Professional electrical and HVAC services' }
             ],
             link: [
                 { rel: 'canonical', href: 'https://prescotteh.com' },
