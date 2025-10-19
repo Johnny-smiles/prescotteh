@@ -1,0 +1,82 @@
+site:
+  name: "Prescott Electric & Heating, Inc."
+  domain: "prescotteh.com"
+  phone: "+17152623253"
+  phone_display: "(715) 262-3253"
+  email: "mike@prescotteh.com"
+  street: "131 Broad Street North"
+  city: "Prescott"
+  region: "WI"
+  postal: "54021"
+  country: "US"
+  hours: "Mo–Fr 07:00–17:00"   # adjust if needed
+  description: "Quality since 1963. Prescott Electric & Heating provides electrical and HVAC services for homes and businesses across the St. Croix River Valley."
+  service_area: ["Prescott", "River Falls", "Hudson", "Hastings", "Red Wing", "Cottage Grove"]
+
+branding:
+  colors:
+    primary: "#118AB2"
+    accent:  "#0B6E7E"
+    dark:    "#1A1A1A"
+    light:   "#F5F7FA"
+    gradient_from: "#1CA4C6"
+    gradient_to: "#0B6E7E"
+  fonts:
+    heading: "Russo One"
+    body: "Inter"
+
+assets:
+  logo: "public/clients/prescotteh/logo.png"   # put the provided logo here
+  og_image: "public/clients/prescotteh/og.jpg"
+
+links:
+  website: "http://prescotteh.com"
+  gbp: ""          # add if/when you have it
+  facebook: ""
+  instagram: ""
+  yelp: ""
+  nextdoor: ""
+
+niche: "electrical & HVAC contractor"
+
+features:
+  trust_badges: true
+  locations_strip: true
+  financing_strip: false
+
+services:
+  - slug: "residential-electrical"
+    title: "Residential Electrical"
+    summary: "Safe, code-compliant wiring and upgrades for your home."
+    bullets:
+      - "Panel upgrades and service changes"
+      - "Lighting installs & troubleshooting"
+      - "Surge protection and safety inspections"
+
+  - slug: "commercial-electrical"
+    title: "Commercial Electrical"
+    summary: "Reliable electrical work for offices, shops, and build-outs."
+    bullets:
+      - "Tenant improvements & new circuits"
+      - "LED retrofits and maintenance"
+      - "Dedicated circuits for equipment"
+
+  - slug: "heating-and-cooling"
+    title: "Heating & Cooling"
+    summary: "Furnace, AC, and mini-split installation and service."
+    bullets:
+      - "Furnace/AC install and replacement"
+      - "Ductless mini-splits and heat pumps"
+      - "Seasonal tune-ups & repairs"
+
+  - slug: "hvac-maintenance"
+    title: "HVAC Maintenance"
+    summary: "Keep systems efficient with scheduled checkups."
+    bullets:
+      - "Filter, coil, and safety checks"
+      - "Thermostat and airflow balancing"
+      - "Priority service options"
+
+style:
+  tone: concise
+  word_limit: 90

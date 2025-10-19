@@ -1,0 +1,6 @@
+Use site-template-starter/codex.md as the runbook and site-template-starter/intake/client.yaml as intake.
+Duplicate the template with site-template-starter/scripts/duplicate.sh into ./client-<slug> and run setup.sh there.
+Pick a non-cookie-cutter hero and services layout from site-template-starter/catalog/sections.json.
+Generate unique Home + 3–5 Service pages using site-template-starter/prompts/home.md and site-template-starter/prompts/service.md, and FAQs from site-template-starter/prompts/faq.md (JSON only).
+Add LocalBusiness JSON-LD on Home and Service JSON-LD on each service page (use useSchema helpers).
+Update nav/footer links, ensure public/logo.png is referenced, run npm i && npm run dev to validate, then create a new branch client/<slug> and commit all changes.

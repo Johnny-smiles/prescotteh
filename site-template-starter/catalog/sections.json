@@ -1,0 +1,41 @@
+{
+  "heroLayouts": [
+    {
+      "component": "HeroSection",
+      "variant": "centered"
+    },
+    {
+      "component": "HeroSection",
+      "variant": "left"
+    },
+    {
+      "component": "HeroSection",
+      "variant": "with-cta-band"
+    }
+  ],
+  "homeSections": [
+    {
+      "component": "ContactStrip",
+      "flag": "trust_badges",
+      "whenTrueInsert": false
+    },
+    {
+      "component": "TrustBadges",
+      "flag": "trust_badges",
+      "whenTrueInsert": true
+    },
+    {
+      "component": "HomepageServices"
+    },
+    {
+      "component": "LocationsStrip",
+      "flag": "locations_strip",
+      "whenTrueInsert": true
+    },
+    {
+      "component": "FinancingStrip",
+      "flag": "financing_strip",
+      "whenTrueInsert": true
+    }
+  ]
+}

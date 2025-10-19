@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Nuxt / Nitro
+.nuxt/
+.output/
+dist/
+
+# Environment
+.env
+
+# OS
+.DS_Store
+
+# IDE
+.idea/
+.idea/vcs.xml
+
+# Backups / temp
+*.bak
+*.tmp
