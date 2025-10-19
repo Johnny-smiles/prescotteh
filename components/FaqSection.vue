@@ -44,24 +44,24 @@ interface FAQ { q: string; a: string }
 
 const faqs: FAQ[] = [
     {
-        q: 'How long does PDR take?',
-        a: 'Small door dings can be finished in a couple of hours. Larger creases or multi-panel repairs take longer; we’ll give you a clear estimate after seeing photos.'
+        q: 'Do you offer emergency electrical or HVAC service?',
+        a: 'Yes. Call any time and we will prioritize outage repairs or heating failures with the first available crew.'
     },
     {
-        q: 'Will PDR affect my paint or CarFax?',
-        a: 'No—PDR preserves your OEM paint and typically does not show up on CarFax because there’s no repainting or body filler involved.'
+        q: 'Can you handle electrical and HVAC work in one visit?',
+        a: 'Absolutely. We coordinate electricians and heating technicians together so upgrades and installs stay on the same timeline.'
     },
     {
-        q: 'Can I text photos for a quote?',
-        a: 'Yes. Text a few angles of the dent and include year/make/model for the fastest quote. We’ll reply with an estimate and available time slots.'
+        q: 'Will you take care of permits and inspections?',
+        a: 'We manage all paperwork, schedule inspections, and walk through the job so your project passes cleanly.'
     },
     {
-        q: 'Do you handle insurance for hail?',
-        a: 'Absolutely. We provide insurance-friendly estimates and help coordinate the process so your hail damage is repaired panel by panel.'
+        q: 'Do you service commercial properties too?',
+        a: 'Yes. We support offices, schools, shops, and light industrial facilities across the St. Croix River Valley.'
     },
     {
-        q: 'Do you offer mobile service?',
-        a: 'For many single-panel dents we can come to you. For larger or complex work, we’ll schedule a drop-off at our Lakeland location.'
+        q: 'Can I text photos before you arrive?',
+        a: 'Send panel labels, thermostat alerts, or equipment photos so we can prep parts and arrive ready to work.'
     }
 ]
 

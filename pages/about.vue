@@ -3,35 +3,23 @@
         <section class="max-w-5xl mx-auto px-6 py-20">
             <h1 class="text-4xl md:text-5xl font-bold mb-6">About {{ siteConfig.siteName }}</h1>
 
-            <p class="mb-4">
-                <strong>{{ siteConfig.siteName }}</strong> is a locally owned shop in {{ siteConfig.location.city }}, {{ siteConfig.location.state }} focused on
-                precision <em>paintless dent repair</em> (PDR), hail restoration, and detailing.
-                Our mission is simple: deliver fast, clean results that preserve your OEM paint
-                and make your car look new again.
+            <p class="mb-4 text-brand-dark/80">
+                <strong>{{ siteConfig.siteName }}</strong> began as a small electrical shop in {{ siteConfig.location.city }}, {{ siteConfig.location.state }} back in 1963.
+                Today, the company combines licensed electricians and HVAC technicians under one roof so you never have to juggle multiple contractors to keep your property running.
             </p>
 
-            <p class="mb-4">
-                From door dings and sharp creases to multi-panel hail, we've seen—and fixed—it all.
-                Using specialized lighting and tools, we gently massage metal from behind the panel,
-                avoiding fillers and repainting. The result: factory-correct panels, quicker turnarounds,
-                and a repair that typically doesn't show up on CarFax.
+            <p class="mb-4 text-brand-dark/80">
+                We handle panel work, lighting design, dedicated circuits, and code corrections—then stay onsite to install or service the furnaces, air conditioners, and mini-splits that power your comfort.
+                Every project starts with clear options, a written estimate, and a tidy job site. It is the same way we have earned trust from homeowners, schools, and local businesses throughout the St. Croix River Valley.
             </p>
 
-            <p>
-                Need us to come to you for a small dent, or prefer a drop-off at our {{ siteConfig.location.city }} location?
-                We'll work around your schedule and provide insurance-friendly estimates when needed.
+            <p class="text-brand-dark/80">
+                Need emergency help or planning a remodel? Reach us anytime and we will map the electrical and HVAC scope together.
                 <NuxtLink to="/contact" class="underline text-brand-primary">
-                    Request a Free Estimate
+                    Request an onsite visit
                 </NuxtLink>
-                today.
+                or call to speak with a dispatcher right away.
             </p>
-
-            <!-- Shop/Team Photo (keep your existing file, or replace the src later) -->
-<!--            <NuxtImg-->
-<!--                src="/aboutFamily.jpeg"-->
-<!--                alt="The Acadia PDR team"-->
-<!--                class="w-full max-w-md mx-auto mt-10 rounded-lg shadow-md object-cover"-->
-<!--            />-->
         </section>
     </main>
 </template>

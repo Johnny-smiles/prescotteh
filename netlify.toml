@@ -98,3 +98,10 @@
 #   to   = "https://REPLACE_YOUR_DOMAIN/:splat"
 #   status = 301
 #   conditions = { Host = ["your-site.netlify.app"] }
+
+# Canonical redirect for Netlify subdomain → custom domain
+# [[redirects]]
+#   from = "/*"
+#   to   = "https://REPLACE_YOUR_DOMAIN/:splat"
+#   status = 301
+#   conditions = { Host = ["your-site.netlify.app"] }

@@ -1,7 +1,10 @@
 <template>
     <main>
         <section class="max-w-4xl mx-auto px-6 py-20">
-            <h1 class="text-4xl md:text-5xl font-bold mb-8">Request a Free Estimate</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Request Electrical or HVAC Service</h1>
+            <p class="text-brand-dark/75 mb-8">
+                Share a few project details and our dispatcher will confirm the fastest appointment. For emergencies, call immediately so we can triage help.
+            </p>
 
             <!-- Confirmation message -->
             <div
@@ -71,27 +74,55 @@
                     </div>
                 </div>
 
-                <!-- Vehicle & location -->
+                <!-- Service details -->
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block font-medium mb-1">Vehicle (Year / Make / Model)</label>
+                        <label class="block font-medium mb-1">Property Type</label>
+                        <select
+                            name="propertyType"
+                            class="w-full border border-black/10 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                        >
+                            <option>Single-family home</option>
+                            <option>Multi-family</option>
+                            <option>Commercial</option>
+                            <option>Industrial</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-medium mb-1">Service Needed</label>
+                        <select
+                            name="serviceNeeded"
+                            class="w-full border border-black/10 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                        >
+                            <option>Electrical troubleshooting</option>
+                            <option>Panel or wiring upgrade</option>
+                            <option>Heating service or install</option>
+                            <option>Cooling service or install</option>
+                            <option>Maintenance plan</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block font-medium mb-1">Service Address</label>
                         <input
                             type="text"
-                            name="vehicle"
-                            placeholder="e.g., 2021 Toyota Camry"
+                            name="serviceAddress"
+                            placeholder="Street, city, ZIP"
                             class="w-full border border-black/10 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-primary"
                         />
                     </div>
                     <div>
-                        <label class="block font-medium mb-1">Repair Location</label>
-                        <select
-                            name="location"
+                        <label class="block font-medium mb-1">Preferred Appointment Window</label>
+                        <input
+                            type="text"
+                            name="preferredTime"
+                            placeholder="e.g., ASAP, weekday mornings, specific date"
                             class="w-full border border-black/10 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-primary"
-                        >
-                            <option>Mobile Service (onsite)</option>
-                            <option>Drop-off in {{ADDRESS_CITY}}</option>
-                            <option>Either</option>
-                        </select>
+                        />
                     </div>
                 </div>
 
@@ -106,7 +137,7 @@
                         class="w-full border border-black/10 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-primary"
                     />
                     <p class="text-sm text-neutral-600 mt-2">
-                        Tip: Stand back 3–5 ft and include reflection lines. Add 2–3 angles if possible.
+                        Tip: Snap wide shots of the breaker panel, equipment labels, or the issue location so our team can arrive prepared.
                     </p>
                 </div>
 
@@ -116,7 +147,7 @@
                     <textarea
                         name="message"
                         rows="5"
-                        placeholder="Where is the dent? When did it occur? Any prior paint work on that panel?"
+                        placeholder="Describe the issue, equipment model numbers, recent work completed, or any outage alarms."
                         class="w-full border border-black/10 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-primary"
                     ></textarea>
                 </div>
@@ -130,12 +161,12 @@
 
             <!-- Alt CTA -->
             <div class="mt-10 bg-brand-gradient rounded-2xl p-6 md:p-8 text-white">
-                <h2 class="text-2xl font-bold">Text Photos for the Fastest Quote</h2>
+                <h2 class="text-2xl font-bold">Need emergency help right now?</h2>
                 <p class="mt-2 text-white/90">
-                    Send 2–3 angles and your year/make/model. We’ll reply with an estimate and available time slots.
+                    Text photos of the panel, thermostat, or equipment alerts. We will reply with troubleshooting steps and dispatch timing.
                 </p>
                 <div class="mt-4">
-                    <a :href="`sms:${phone}?body=Hi%20{{SITE_NAME}}%2C%20I%27d%20like%20an%20estimate.`" class="btn-primary">
+                    <a :href="`sms:${phone}?body=Hi%20Prescott%20Electric%20%26%20Heating%2C%20can%20you%20help%20with...`" class="btn-primary">
                         Text {{ phoneDisplay }}
                     </a>
                 </div>

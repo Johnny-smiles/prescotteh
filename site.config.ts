@@ -2,108 +2,134 @@
 export type BusinessType = 'LocalBusiness' | 'HVACBusiness' | 'AutoRepair'
 
 export const siteConfig = {
-    siteName: "Prescott Electric siteName: "Vogt Electric", Heating, Inc.",
-    siteUrl: 'http://prescotteh.com',
+    siteName: 'Prescott Electric & Heating, Inc.',
+    siteUrl: 'https://prescotteh.com',
 
     // Contact
     phone: '+17152623253',
-    phoneDisplay: "{{PHONE_DISPLAY}}",      // Pretty display
+    phoneDisplay: '(715) 262-3253',
     email: 'mike@prescotteh.com',
 
     // Location
     location: {
-        street: "{{ADDRESS_STREET}}",
-        city: "{{ADDRESS_CITY}}",
-        state: "{{ADDRESS_STATE}}",
-        zip: "{{ADDRESS_ZIP}}",
-        country: "{{ADDRESS_COUNTRY}}",
-        latitude: "",    // optional
-        longitude: ""    // optional
+        street: '131 Broad Street North',
+        city: 'Prescott',
+        state: 'WI',
+        zip: '54021',
+        country: 'US',
+        latitude: '',
+        longitude: ''
     },
 
     // Business meta
-    description: "Quality since 1963. Prescott Electric description: "Vogt Electric is a locally owned electrical contractor serving homeowners and businesses across the Twin Cities. From panel upgrades to lighting and EV charger installations, we deliver safe, reliable, and efficient electrical solutions.", Heating provides electrical and HVAC services for homes and businesses across the St. Croix River Valley.",
-    hours: "{{BUSINESS_HOURS}}",
-    businessType: "LocalBusiness", // Options: 'LocalBusiness', 'HVACBusiness', 'AutoRepair', etc.
+    description: 'Prescott Electric & Heating delivers licensed electrical and HVAC service for homes and small businesses across the St. Croix River Valley.',
+    hours: 'Mo–Fr 07:00–17:00',
+    businessType: 'HVACBusiness' as BusinessType,
 
     // Assets
-    socialImage: "/og-image.jpg",
-    favicon: "/favicon.png",
+    socialImage: '/og-image.jpg',
+    favicon: '/favicon.png',
 
-    // Theme
+    // Theme tokens used in components
     theme: {
-        primaryColor:  "{{PRIMARY_COLOR}}",  // teal
-        secondaryColor:"{{SECONDARY_COLOR}}",  // light bg
-        accentColor:   "{{ACCENT_COLOR}}",  // warm CTA
-        fontFamily:    "{{FONT_FAMILY}}",
-        borderRadius:  "{{BORDER_RADIUS}}"
+        primaryColor: '#118AB2',
+        secondaryColor: '#F5F7FA',
+        accentColor: '#0B6E7E',
+        fontFamily: 'Russo One, Inter, sans-serif',
+        borderRadius: '1.75rem'
     },
 
-    // Hero copy (used in Index sections below if you want to bind it)
     hero: {
-        eyebrow: "{{HERO_EYEBROW}}",
-        headline: "{{HERO_HEADLINE}}",
-        subheadline: "{{HERO_SUBHEADLINE}}",
-        ctaPrimaryLabel: "{{CTA_PRIMARY}}",
-        ctaSecondaryLabel: "{{CTA_SECONDARY}}"
+        eyebrow: 'Serving the St. Croix River Valley Since 1963',
+        headline: 'Reliable Electrical & HVAC Pros Near You',
+        subheadline: 'Licensed electricians and heating technicians for fast, code-compliant fixes across Prescott and River Falls.',
+        ctaPrimaryLabel: 'Call for Service',
+        ctaSecondaryLabel: 'Book an Estimate'
     },
 
-    // Services summary (HomepageServices already handles grid; this supports extra sections on index)
+    homeContent: {
+        intro: 'Prescott Electric & Heating keeps homes and small businesses in Prescott and River Falls running safely and comfortably. Our electricians handle panel upgrades, lighting, and everyday troubleshooting, while our HVAC team installs and services furnaces, air conditioners, and ductless systems. We show up on time, clean up before we leave, and explain every option in plain language so you can make the call that fits your space and budget.',
+        bullets: [
+            'Same-day troubleshooting for urgent electrical issues',
+            'Energy-smart installs with financing-friendly options',
+            'Licensed electricians and HVAC techs on every project',
+            'Serving Prescott and River Falls, plus nearby communities'
+        ]
+    },
+
     services: [
         {
-            title: "Paintless Dent Repair",
-            blurb: "Door dings, creases, and small collisions corrected without repainting.",
-            bullets: ["Mobile or drop-off", "Same-day on many jobs", "Preserve OEM paint"]
+            title: 'Residential Electrical',
+            blurb: 'Repairs, upgrades, and safety-driven wiring for homes across the valley.',
+            bullets: [
+                'Panel replacements and capacity planning',
+                'Lighting design, installs, and repairs',
+                'Whole-home surge and code corrections'
+            ]
         },
         {
-            title: "Hail Repair",
-            blurb: "Insurance-friendly estimates and panel-by-panel hail dent removal.",
-            bullets: ["Work with your insurer", "Multi-panel correction", "Keep CarFax clean"]
+            title: 'Commercial Electrical',
+            blurb: 'Tenant build-outs, lighting retrofits, and maintenance for offices and shops.',
+            bullets: [
+                'Dedicated circuits for equipment',
+                'LED upgrades that cut usage',
+                'On-call troubleshooting for outages'
+            ]
         },
         {
-            title: "Detailing & Add-ons",
-            blurb: "Interior/exterior detailing, scratch/scuff removal, ceramic coating.",
-            bullets: ["Express & full detail", "Scratch buffing", "Ceramic protection"]
+            title: 'Heating & Cooling',
+            blurb: 'Installation and service for furnaces, air conditioners, and ductless systems.',
+            bullets: [
+                'High-efficiency furnace and AC installs',
+                'Ductless mini-splits for comfort control',
+                'Seasonal tune-ups and emergency repairs'
+            ]
         }
     ],
 
-    // Why choose us
     valueProps: [
-        { title: "OEM Paint Preserved", text: "No filler. No repaint. Just clean metalwork." },
-        { title: "Mobile Service",      text: "We can come to you for minor work or schedule drop-off." },
-        { title: "Insurance Friendly",  text: "Streamlined estimates and coordination on hail events." }
+        { title: 'One Call for Power & Comfort', text: 'Coordinated electrical and HVAC crews eliminate juggling multiple contractors.' },
+        { title: 'Craftsmanship Since 1963',      text: 'Family-owned and trusted for code-compliant installs across the St. Croix Valley.' },
+        { title: 'Clear Pricing Before Work',     text: 'We review options on-site, provide written estimates, and stand behind every fix.' }
     ],
 
-    // Reviews (simple placeholders; replace with real quotes when ready)
     reviews: [
-        { name: "Sarah M.", text: "Flawless result. You can’t tell there was a dent at all." },
-        { name: "Daniel K.", text: "Fast mobile repair at my office. Super convenient." },
-        { name: "Alyssa R.", text: "Handled hail damage quickly and worked with my insurer." }
+        { name: 'Lori H.',   text: 'They replaced our panel and added surge protection in one visit—everything was tidy and clearly explained.' },
+        { name: 'Trevor M.', text: 'Furnace quit on a freezing night. Prescott Electric & Heating had us warm again before sunrise.' },
+        { name: 'Sheila D.', text: 'Fast troubleshooting on our shop lighting and they coordinated with the city inspector without delays.' }
     ],
 
-    // FAQs
     faqs: [
         {
-            q: "How long does PDR take?",
-            a: "Small dings can be done in hours. Multi-panel hail can take longer depending on severity."
+            q: 'Do you handle emergency calls?',
+            a: 'Yes. We offer after-hours support for electrical outages and heating failures—call and we will triage the quickest solution.'
         },
         {
-            q: "Do you repaint?",
-            a: "No. PDR preserves the OEM paint by massaging the dent from behind the panel."
+            q: 'Can you upgrade my panel and furnace together?',
+            a: 'Absolutely. We plan the electrical capacity first, then install the HVAC equipment so everything passes inspection the first time.'
         },
         {
-            q: "Can I text photos for an estimate?",
-            a: "Yes—text a few angles and include year/make/model for the quickest quote."
+            q: 'Which areas do you serve?',
+            a: 'We regularly work in Prescott, River Falls, Hudson, Hastings, Red Wing, Cottage Grove, and neighboring communities.'
+        },
+        {
+            q: 'Do you offer maintenance plans?',
+            a: 'Yes. Schedule seasonal electrical and HVAC checks so breakers, furnaces, and air conditioners stay efficient year-round.'
+        },
+        {
+            q: 'Can I request a virtual estimate?',
+            a: 'Send photos or short videos of the issue and we will review them before visiting your property.'
         }
     ],
 
-    // Service areas
-    serviceAreas: "{{SERVICE_AREAS}}",
+    serviceAreas: ['Prescott', 'River Falls', 'Hudson', 'Hastings', 'Red Wing', 'Cottage Grove'],
 
-    // Social links (optional)
     social: {
-        nextdoor: "{{SOCIAL_NEXTDOOR}}",
-        facebook: "{{SOCIAL_FACEBOOK}}",
-        yelp: "{{SOCIAL_YELP}}"
+        website: 'https://prescotteh.com',
+        gbp: '',
+        facebook: '',
+        instagram: '',
+        yelp: '',
+        nextdoor: ''
     }
 }

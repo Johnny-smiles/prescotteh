@@ -16,44 +16,44 @@ export default defineNuxtConfig({
         }
     },
 
-    // <head> config for Vogt Electric
+    // <head> config for Prescott Electric & Heating
     app: {
         head: {
             htmlAttrs: { lang: 'en' },
-            title: 'Vogt Electric — {{HERO_HEADLINE}}',
+            title: 'Prescott Electric & Heating — Electrical & HVAC in Prescott, WI',
             meta: [
                 { charset: 'utf-8' },
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
                 {
                     name: 'description',
-                    content: 'Vogt Electric is a locally owned electrical contractor serving homeowners and businesses across the Twin Cities. From panel upgrades to lighting and EV charger installations, we deliver safe, reliable, and efficient electrical solutions.'
+                    content: 'Prescott Electric & Heating provides licensed electrical and HVAC service for homes and small businesses across Prescott, River Falls, Hudson, and the St. Croix River Valley.'
                 },
                 { name: 'robots', content: 'index, follow' },
 
                 /* Open Graph */
-                { property: 'og:title',       content: 'Vogt Electric — {{HERO_HEADLINE}}' },
-                { property: 'og:description', content: 'Vogt Electric is a locally owned electrical contractor serving homeowners and businesses across the Twin Cities. From panel upgrades to lighting and EV charger installations, we deliver safe, reliable, and efficient electrical solutions.' },
-                { property: 'og:image',       content: 'https://www.vogtelectric.com/og-image.jpg' },
+                { property: 'og:title',       content: 'Prescott Electric & Heating — Electrical & HVAC in Prescott, WI' },
+                { property: 'og:description', content: 'Reliable electricians and HVAC technicians serving Prescott, River Falls, Hudson, and nearby communities since 1963.' },
+                { property: 'og:image',       content: 'https://prescotteh.com/og-image.jpg' },
                 { property: 'og:image:width', content: '1200' },
                 { property: 'og:image:height', content: '630' },
-                { property: 'og:url',         content: 'https://www.vogtelectric.com' },
+                { property: 'og:url',         content: 'https://prescotteh.com' },
                 { property: 'og:type',        content: 'website' },
 
                 /* Twitter */
                 { name: 'twitter:card',        content: 'summary_large_image' },
-                { name: 'twitter:title',       content: 'Vogt Electric — {{HERO_HEADLINE}}' },
-                { name: 'twitter:description', content: 'Vogt Electric is a locally owned electrical contractor serving homeowners and businesses across the Twin Cities. From panel upgrades to lighting and EV charger installations, we deliver safe, reliable, and efficient electrical solutions.' },
-                { name: 'twitter:image',       content: 'https://www.vogtelectric.com/og-image.jpg' }
+                { name: 'twitter:title',       content: 'Prescott Electric & Heating — Electrical & HVAC in Prescott, WI' },
+                { name: 'twitter:description', content: 'Full-service electrical and heating/cooling support throughout Prescott and the St. Croix Valley.' },
+                { name: 'twitter:image',       content: 'https://prescotteh.com/og-image.jpg' }
             ],
             link: [
-                { rel: 'canonical', href: 'https://www.vogtelectric.com' },
+                { rel: 'canonical', href: 'https://prescotteh.com' },
 
                 // Fonts (no @nuxtjs/google-fonts needed)
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
                 { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
                 {
                     rel: 'stylesheet',
-                    href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap'
+                    href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Russo+One&display=swap'
                 },
 
                 // Favicon
@@ -64,7 +64,7 @@ export default defineNuxtConfig({
                 {
                     src: 'https://plausible.io/js/script.js',
                     defer: true,
-                    'data-domain': '{{ANALYTICS_DOMAIN}}'
+                    'data-domain': 'prescotteh.com'
                 },
                 /* Google Tag Manager - handled in components for better compatibility */
             ]
@@ -95,8 +95,8 @@ export default defineNuxtConfig({
 
     // Sitemap (module uses this for absolute URLs)
     site: {
-        url: 'https://www.vogtelectric.com',
-        name: 'Vogt Electric'
+        url: 'https://prescotteh.com',
+        name: 'Prescott Electric & Heating, Inc.'
         // You can customize routes/exclude later if needed
     },
 
@@ -111,8 +111,8 @@ export default defineNuxtConfig({
     // Runtime config to avoid serialization issues
     runtimeConfig: {
         public: {
-            siteName: 'Vogt Electric',
-            siteUrl: 'https://www.vogtelectric.com'
+            siteName: 'Prescott Electric & Heating, Inc.',
+            siteUrl: 'https://prescotteh.com'
         }
     }
 })

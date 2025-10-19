@@ -1,52 +1,86 @@
 <template>
-    <section
-        class="relative min-h-[56vh] sm:min-h-[60vh] md:min-h-[65vh] flex items-center justify-center overflow-hidden bg-brand-gradient py-10 sm:py-14"
-    >
-        <!-- Decorative background image -->
-        <NuxtImg
-            src="/pdr-hero.jpg"
-            alt=""
-            aria-hidden="true"
-            role="presentation"
-            width="1800"
-            height="900"
-            sizes="(max-width: 1024px) 100vw, 1200px"
-            preload
-            fetchpriority="high"
-            placeholder
-            class="absolute inset-0 w-full h-full object-cover opacity-35 mix-blend-overlay"
-        />
+    <!-- Variation: HeroSection variant "with-cta-band" from catalog -->
+    <section class="relative isolate overflow-hidden bg-brand-gradient text-white">
+        <div class="absolute inset-0 bg-brand-radial opacity-90" />
+        <div class="absolute -top-24 -left-24 size-[360px] rounded-full bg-white/10 blur-3xl" />
+        <div class="absolute -bottom-28 -right-20 size-[320px] rounded-full bg-black/20 blur-3xl" />
 
-        <!-- Soft dark veil -->
-        <div class="absolute inset-0 bg-black/30" />
+        <div class="section-boxed relative z-10 flex flex-col gap-12 py-16 md:py-24">
+            <div class="grid gap-12 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] items-center">
+                <div class="space-y-6">
+                    <p class="uppercase tracking-[0.28em] text-sm text-white/80">{{ siteConfig.hero.eyebrow }}</p>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+                        {{ siteConfig.hero.headline }}
+                    </h1>
+                    <p class="text-lg md:text-xl text-white/85">
+                        {{ siteConfig.hero.subheadline }}
+                    </p>
+                    <ul class="grid gap-3 text-sm sm:text-base text-white/85 md:grid-cols-2">
+                        <li
+                            v-for="(point, idx) in siteConfig.homeContent.bullets.slice(0, 4)"
+                            :key="`hero-bullet-${idx}`"
+                            class="flex items-start gap-3"
+                        >
+                            <span class="mt-1 inline-flex size-2.5 rounded-full bg-white/80" />
+                            <span>{{ point }}</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-3 pt-4">
+                        <a :href="`tel:${siteConfig.phone}`" class="btn-primary">
+                            {{ siteConfig.hero.ctaPrimaryLabel }}
+                        </a>
+                        <NuxtLink to="/contact" class="btn-accent">
+                            {{ siteConfig.hero.ctaSecondaryLabel }}
+                        </NuxtLink>
+                    </div>
+                </div>
 
-        <!-- Headline & CTAs -->
-        <div
-            class="relative z-10 text-center text-white px-4 drop-shadow-[0_4px_8px_rgba(0,0,0,0.45)] max-w-3xl mx-auto"
-        >
-            <p class="text-white/90 font-semibold tracking-wide mb-2">
-                {{HERO_EYEBROW}}
-            </p>
+                <div class="hero-band p-8 md:p-10 text-brand-dark space-y-6">
+                    <div>
+                        <p class="text-sm font-medium text-brand-accent uppercase tracking-[0.32em]">Licensed & Insured</p>
+                        <p class="mt-3 text-2xl font-semibold">Electrical + HVAC under one roof.</p>
+                    </div>
+                    <div class="grid gap-4">
+                        <div class="flex items-start gap-4">
+                            <div class="flex size-12 items-center justify-center rounded-full bg-brand-primary/15 text-brand-accent font-semibold">
+                                24/7
+                            </div>
+                            <div>
+                                <p class="font-semibold">Emergency Support</p>
+                                <p class="text-sm text-brand-dark/75">On-call help when power fails or the heat stops.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="flex size-12 items-center justify-center rounded-full bg-brand-primary/15 text-brand-accent font-semibold">
+                                60+
+                            </div>
+                            <div>
+                                <p class="font-semibold">Years Serving Prescott</p>
+                                <p class="text-sm text-brand-dark/75">Trusted by neighbors, schools, and local businesses.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-4 text-sm text-brand-dark/75">
+                        <div class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-brand-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5 2a3 3 0 00-3 3v3.586a1 1 0 00.293.707l6.414 6.414a1 1 0 001.414 0l6.414-6.414A1 1 0 0017 8.586V5a3 3 0 00-3-3H5zm3 3a1 1 0 00-.894.553L6.382 7H5a1 1 0 100 2h2a1 1 0 00.894-.553L8.618 6H11a1 1 0 100-2H8z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>{{ prettyPhone }}</span>
+                        </div>
+                        <span class="hidden sm:block h-4 w-px bg-brand-dark/30" />
+                        <span>Prescott • River Falls • Hudson</span>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Enhanced contrast: full white + stronger drop-shadow -->
-            <h1
-                class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-lg"
-            >
-                {{HERO_HEADLINE}}
-            </h1>
-
-            <!-- Enhanced contrast: full white + subtle drop-shadow -->
-            <p class="mt-3 sm:mt-4 text-base sm:text-lg text-white drop-shadow-md">
-                {{HERO_SUBHEADLINE}}
-            </p>
-
-            <div class="mt-6 sm:mt-8 flex flex-wrap gap-3 justify-center">
-                <a :href="`tel:${siteConfig.phone}`" class="btn-primary">
-                    {{CTA_PRIMARY}}
-                </a>
-                <NuxtLink to="/contact" class="btn-accent text-black">
-                    {{CTA_SECONDARY}}
-                </NuxtLink>
+            <div class="hero-band flex flex-col md:flex-row md:items-center md:justify-between gap-4 px-8 py-6">
+                <p class="text-base md:text-lg font-semibold text-brand-dark">
+                    Need a licensed electrician or heating tech today? Call {{ prettyPhone }}.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <a :href="`sms:${siteConfig.phone}`" class="btn-outline">Text Photos</a>
+                    <NuxtLink to="/services" class="btn-accent">View Services</NuxtLink>
+                </div>
             </div>
         </div>
     </section>
@@ -63,7 +97,3 @@ const prettyPhone = computed(() => {
     return siteConfig.phone
 })
 </script>
-
-<style scoped>
-/* Buttons + gradient provided by your global CSS/Tailwind utilities */
-</style>

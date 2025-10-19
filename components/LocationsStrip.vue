@@ -3,7 +3,9 @@
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-8">
         <h3 class="text-2xl font-bold text-gray-900 mb-2">Service Areas</h3>
-        <p class="text-gray-600">We proudly serve the {{ siteConfig.serviceAreas }} and surrounding communities.</p>
+        <p class="text-gray-600">
+          We proudly serve {{ serviceAreaList }} and surrounding communities.
+        </p>
       </div>
       
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -18,7 +20,7 @@
       </div>
       
       <div class="text-center mt-8">
-        <p class="text-gray-600 mb-4">Don't see your area? We may still be able to help!</p>
+        <p class="text-gray-600 mb-4">Don't see your area? Call and we will confirm availability right away.</p>
         <NuxtLink to="/contact" class="btn-primary">Contact Us</NuxtLink>
       </div>
     </div>
@@ -26,5 +28,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { siteConfig } from '~/site.config'
+
+const serviceAreaList = computed(() => (siteConfig.serviceAreas || []).join(', '))
 </script>

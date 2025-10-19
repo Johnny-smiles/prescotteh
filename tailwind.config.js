@@ -16,19 +16,29 @@ export default {
     theme: {
         extend: {
             colors: {
-                'brand-dark': '#1A1A1A', // deep slate (text)
-                'brand-primary': '#118AB2', // teal (left gradient)
-                'brand-primary-2': '#0B6E7E', // teal-light (right gradient)
-                'brand-accent': '#0B6E7E', // amber accent
-                'brand-light': '#F5F7FA', // page background
+                'brand-dark': '#1A1A1A', // charcoal body text
+                'brand-primary': '#118AB2', // electric teal
+                'brand-primary-2': '#1CA4C6', // light teal glow
+                'brand-accent': '#0B6E7E', // deep sea accent
+                'brand-light': '#F5F7FA', // cool mist background
+                'brand-muted': '#D7E4EB'
             },
             fontFamily: {
                 heading: ['Russo One', 'sans-serif'],
                 body: ['Inter', 'system-ui', 'sans-serif'],
             },
-            container: { center: true, padding: '1.5rem' },
-            borderRadius: { '2xl': '1rem' },
-            boxShadow: { card: '0 8px 24px -8px rgba(0,0,0,0.12)' },
+            container: { center: true, padding: '1.75rem' },
+            borderRadius: {
+                '2xl': '1.5rem',
+                pill: '999px'
+            },
+            boxShadow: {
+                card: '0 24px 48px -28px rgba(17,138,178,0.45)',
+                'card-soft': '0 16px 32px -20px rgba(26,26,26,0.25)'
+            },
+            backgroundImage: {
+                'brand-radial': 'radial-gradient(circle at 15% 20%, rgba(28,164,198,0.28), transparent 55%), radial-gradient(circle at 85% 40%, rgba(11,110,126,0.32), transparent 60%)'
+            },
             keyframes: {
                 'fade-in': { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
             },

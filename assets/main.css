@@ -4,13 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 2) Brand tokens (from the business card) */
+/* 2) Brand tokens for Prescott Electric & Heating */
 :root {
-    --brand-dark:    #0b2b2e;  /* deep slate for text */
-    --brand-primary: #0f8f93;  /* teal (left gradient) */
-    --brand-primary-2:#60c3cb; /* teal-light (right gradient) */
-    --brand-accent:  #ffd166;  /* warm highlight (CTA alt) */
-    --brand-light:   #f5f7f9;  /* page background */
+    --brand-dark:       #1A1A1A;
+    --brand-primary:    #118AB2;
+    --brand-primary-2:  #1CA4C6;
+    --brand-accent:     #0B6E7E;
+    --brand-light:      #F5F7FA;
+    --brand-muted:      #D7E4EB;
 }
 
 /* 3) Base element tweaks */
@@ -19,104 +20,136 @@
         font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
         color: var(--brand-dark);
         background-color: var(--brand-light);
+        letter-spacing: 0.01em;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Russo One', 'Inter', sans-serif;
         color: var(--brand-dark);
-        font-weight: 700;
-        line-height: 1.2;
+        text-transform: none;
+        line-height: 1.15;
     }
 
     a {
         color: var(--brand-primary);
         text-decoration: none;
+        transition: color 0.2s ease, opacity 0.2s ease;
     }
     a:hover {
-        opacity: .9;
+        color: var(--brand-accent);
     }
 
-    /* Accessible focus ring */
     :focus-visible {
         outline: 2px solid var(--brand-primary);
-        outline-offset: 2px;
+        outline-offset: 3px;
     }
 }
 
 /* 4) Re-usable components & helpers */
 @layer components {
-    /* Primary CTA (teal) */
+    /* Primary CTA with soft-pill treatment */
     .btn-primary {
-        @apply inline-flex items-center justify-center font-semibold rounded-md px-6 py-3 transition;
-        color: #fff;
-        background-color: var(--brand-primary);
+        @apply inline-flex items-center justify-center font-semibold tracking-wide uppercase px-7 py-3 transition;
+        border-radius: 999px;
+        background-image: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+        color: #ffffff;
+        box-shadow: 0 16px 32px -18px rgba(13, 80, 102, 0.65);
     }
-    .btn-primary:hover { filter: brightness(.95); }
+    .btn-primary:hover {
+        box-shadow: 0 20px 36px -16px rgba(13, 80, 102, 0.55);
+        transform: translateY(-1px);
+    }
 
-    /* Accent CTA (amber) */
+    /* Accent button with outline glow */
     .btn-accent {
-        @apply inline-flex items-center justify-center font-semibold rounded-md px-6 py-3 transition;
-        color: #1f2937;
-        background-color: var(--brand-accent);
+        @apply inline-flex items-center justify-center font-semibold tracking-wide uppercase px-7 py-3 transition;
+        border-radius: 999px;
+        color: var(--brand-accent);
+        background-color: #ffffff;
+        box-shadow: inset 0 0 0 2px var(--brand-accent);
     }
-    .btn-accent:hover { filter: brightness(.95); }
+    .btn-accent:hover {
+        background-color: color-mix(in srgb, var(--brand-accent) 8%, #ffffff);
+    }
 
-    /* Outline button */
     .btn-outline {
-        @apply inline-flex items-center justify-center font-semibold rounded-md px-6 py-3 transition border;
+        @apply inline-flex items-center justify-center font-semibold tracking-wide uppercase px-7 py-3 transition;
+        border-radius: 999px;
         color: var(--brand-primary);
-        border-color: var(--brand-primary);
+        box-shadow: inset 0 0 0 2px var(--brand-primary);
         background: transparent;
     }
-    .btn-outline:hover { background-color: color-mix(in srgb, var(--brand-primary) 10%, transparent); }
+    .btn-outline:hover {
+        background-color: color-mix(in srgb, var(--brand-primary) 12%, transparent);
+    }
+    .btn-outline.text-white {
+        color: #ffffff;
+        box-shadow: inset 0 0 0 2px rgba(255,255,255,0.8);
+    }
 
-    /* Link button style */
     .btn-link {
-        @apply inline-flex items-center font-semibold underline underline-offset-2;
+        @apply inline-flex items-center font-semibold;
         color: var(--brand-primary);
+        text-decoration: underline;
+        text-underline-offset: 4px;
     }
 
-    /* Info card */
     .card-box {
-        @apply bg-white rounded-xl shadow-md p-6;
+        @apply bg-white;
+        border-radius: 1.75rem;
+        box-shadow: 0 24px 48px -32px rgba(17, 138, 178, 0.45);
+        padding: 2.5rem 2.25rem;
     }
 
-    /* Section wrapper */
     .section-boxed {
-        @apply max-w-7xl mx-auto w-full px-6;
+        @apply max-w-7xl mx-auto w-full;
+        padding: clamp(1.75rem, 3vw, 3rem);
     }
 
-    /* Nav link */
     .nav-link {
-        @apply inline-flex items-center;
+        @apply inline-flex items-center gap-1 font-semibold;
         color: var(--brand-dark);
     }
-    .nav-link:hover { color: var(--brand-primary); }
-
-    /* Chips / pills */
-    .chip {
-        @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm;
-        border-color: color-mix(in srgb, var(--brand-dark) 15%, transparent);
-        background: #fff;
+    .nav-link:hover {
+        color: var(--brand-accent);
     }
 
-    /* Brand gradient helpers */
+    .chip {
+        @apply inline-flex items-center gap-2 text-sm font-medium;
+        border-radius: 999px;
+        padding: 0.4rem 1rem;
+        background: #ffffff;
+        box-shadow: inset 0 0 0 1px rgba(17, 138, 178, 0.25);
+    }
+
     .bg-brand-gradient {
-        background-image: linear-gradient(90deg, var(--brand-primary) 0%, var(--brand-primary-2) 100%);
+        background-image: linear-gradient(120deg, var(--brand-primary) 0%, var(--brand-primary-2) 60%, var(--brand-accent) 100%);
     }
     .text-brand-primary   { color: var(--brand-primary); }
     .border-brand-primary { border-color: var(--brand-primary); }
+
+    .hero-band {
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 2.5rem;
+        box-shadow: 0 24px 48px -28px rgba(7, 50, 64, 0.45);
+    }
+
+    .services-grid {
+        display: grid;
+        gap: clamp(1.5rem, 3vw, 2.5rem);
+    }
 }
 
-/* 5) Simple fade-in utility */
+/* 5) Motion helper */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 .animate-fade-in { animation: fadeIn 0.9s ease-out forwards; }
-.grid > div:nth-child(1) .animate-fade-in { animation-delay: .15s; }
-.grid > div:nth-child(2) .animate-fade-in { animation-delay: .30s; }
-.grid > div:nth-child(3) .animate-fade-in { animation-delay: .45s; }
-.grid > div:nth-child(4) .animate-fade-in { animation-delay: .60s; }
+.grid > div:nth-child(1) .animate-fade-in { animation-delay: .12s; }
+.grid > div:nth-child(2) .animate-fade-in { animation-delay: .24s; }
+.grid > div:nth-child(3) .animate-fade-in { animation-delay: .36s; }
+.grid > div:nth-child(4) .animate-fade-in { animation-delay: .48s; }

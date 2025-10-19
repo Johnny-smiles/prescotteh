@@ -18,12 +18,15 @@
 
             <!-- Links -->
             <div class="w-full md:col-span-2 text-center">
-                <h3 class="text-lg font-semibold mb-3">Company</h3>
+                <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
                 <ul class="list-none space-y-2">
-                    <li><NuxtLink to="/about"        class="hover:text-brand-primary">About</NuxtLink></li>
-                    <li><NuxtLink to="/services"     class="hover:text-brand-primary">Services</NuxtLink></li>
-                    <li><NuxtLink to="/recent-work"  class="hover:text-brand-primary">Recent&nbsp;Work</NuxtLink></li>
-                    <li><NuxtLink to="/contact"      class="hover:text-brand-primary">Contact</NuxtLink></li>
+                    <li><NuxtLink to="/"                        class="hover:text-brand-primary">Home</NuxtLink></li>
+                    <li><NuxtLink to="/about"                   class="hover:text-brand-primary">About</NuxtLink></li>
+                    <li><NuxtLink to="/services"                class="hover:text-brand-primary">All Services</NuxtLink></li>
+                    <li><NuxtLink to="/services/service-a"      class="hover:text-brand-primary">Residential Electrical</NuxtLink></li>
+                    <li><NuxtLink to="/services/service-b"      class="hover:text-brand-primary">Commercial Electrical</NuxtLink></li>
+                    <li><NuxtLink to="/services/service-c"      class="hover:text-brand-primary">Heating &amp; Cooling</NuxtLink></li>
+                    <li><NuxtLink to="/contact"                 class="hover:text-brand-primary">Contact</NuxtLink></li>
                 </ul>
             </div>
 
@@ -46,8 +49,8 @@
 import { computed } from 'vue'
 import { siteConfig } from '~/site.config'
 
-const brandName = computed(() => siteConfig.siteName || 'Acadia PDR')
-const email = computed(() => siteConfig.email || 'info@acadiapdr.com')
+const brandName = computed(() => siteConfig.siteName || 'Prescott Electric & Heating')
+const email = computed(() => siteConfig.email || 'service@prescotteh.com')
 
 const phoneDisplay = computed(() => {
     // prefer a display value if present
